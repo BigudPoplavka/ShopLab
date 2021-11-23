@@ -44,6 +44,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -77,6 +78,18 @@
                         @endguest
                     </ul>
                 </div>
+                <!--Card-->
+                <a href="{{ route('card') }}">
+                    <div class="card_block">
+                         <div class="count">
+                             <h5 class="count-text">
+                               {{ $count }}
+                             </h5>
+                         </div>
+                            <img src="{{ asset('img/card_2.png') }}" alt="" class="card_icon">
+                        </a>
+                    </div>
+                       
             </div>
         </nav>
         <!-- Shop menu -->
@@ -109,49 +122,44 @@
             <div class="left-menu">
                 <ul id="non-mark" class="menu-ul">
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Аксессуары</a>
-                        </button>
+                          
+                        <a href="{{ route('category', ['category'=>1]) }}" class="left-menu-links">Аксессуары</a>
+                        
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Барабанные установки</a>
-                        </button>
+                         
+                        <a href="{{ route('category', ['category'=>2]) }}" class="left-menu-links">Барабанные установки</a>
+                        
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Барабанные палочки</a>
-                        </button>
+                         
+                        <a href="{{ route('category', ['category'=>3]) }}" class="left-menu-links">Барабанные палочки</a>
+                        
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Тарелки</a>
-                        </button>
+                         
+                        <a href="{{ route('category', ['category'=>4]) }}" class="left-menu-links">Тарелки</a>
+                      
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Педали</a>
-                        </button>
+                          
+                        <a href="{{ route('category', ['category'=>5]) }}" class="left-menu-links">Педали</a>
+                      
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Карданы</a>
-                        </button>
+                          
+                        <a href="{{ route('products') }}" class="left-menu-links">Отдельные барабаны</a>
+                        
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Отдельные барабаны</a>
-                        </button>
+                         
+                        <a href="{{ route('products') }}" class="left-menu-links">Стойки и крепления</a>
+                        
                     </li>
                     <li class="menu-li">
-                        <button class="menu-button">    
-                        <a href="" class="left-menu-links">Стойки и крепления</a>
-                        </button>
-                    </li>
-                    <li class="menu-li">
-                    <button class="menu-button">    
-                    <a href="" class="left-menu-links">Чехлы</a>
-                    </button>
+                      
+                    <a href="{{ route('products') }}" class="left-menu-links">Чехлы</a>
+                   
                     </li>
                 </ul>
             </div>
@@ -162,10 +170,29 @@
     </div>
 
     <div class="news">
-        <h4 class="footer-h news-title" >
-            Новости
-        </h4>
-      
+        <br>
+        <h3 class="footer-h news-title" >
+            <b>Новости</b>
+        </h3>
+        <br>
+        <div class="news-content">
+            <div class="news-block">
+                <img src="/img/news/1.jpg" alt="" class="news-image"><br>
+                <h4 class="news-title"><b>Фестиваль 2021</b></h4>
+                <p class="news-p">В этом году фестиваль объединения проводится от лица нашего магазина. Ждите нас на самой большой концертной площадке Токио уже скоро!</p>
+            </div>
+            <div class="news-block">
+                <img src="/img/news/2.jpg" alt="" class="news-image"><br>
+                <h4 class="news-title"><b>Periphery Signature Pack</b></h4>
+                <p class="news-p">Взрывная песня Periphery - Have a Blast уже добавлена в библиотеку Signature Pack от Мэтта Хелперна! Успей преобрести на их <a href="https://www.getgooddrums.com/products/matt-halpern-signature-pack" target="_blank" style="color: white;">ОФФИЦИАЛЬНОМ САЙТЕ</a></p>
+            </div>
+            <div class="news-block">
+                <img src="/img/news/3.jpg" alt="" class="news-image"><br>
+                <h4 class="news-title"><b>Crystal Lake Drummer</b></h4>
+                <p class="news-p">И снова парни из японской металкор грппы Crystal Lake устраивают зажигательный концерт в честь открытия предстоящего фестиваля 2021! О других группах пока не сообщается, организаторы готовят сюрприз гостям.</p>
+            </div>
+           
+        </div>
     </div>
 
     <!-- Footer -->
@@ -191,7 +218,7 @@
                        <br>
                    </table>
                </div>
-               <hr>
+               <hr style="color: white;">
                <br>
                <h6 class="footer-h">
                    ПАРТНЕРЫ
@@ -208,9 +235,7 @@
                <img src="{{ asset('img/logo_footer.png') }}" alt="" id="footer-logo">
            </div>
            <div id="footer-content">
-               <h6 class="footer-h">
-                   ИНФОРМАЦИЯ
-               </h6>
+              
            </div>
        </footer>
 </body>

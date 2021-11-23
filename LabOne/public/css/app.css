@@ -10007,7 +10007,7 @@ body{
 }
 
 hr{
-    background-color: #616161;
+    background-color: #ffffff;
     width: 20%;
 }
 
@@ -10018,6 +10018,9 @@ li{
 footer{
     background-color: #292929;
     display: flex;
+    background-image: url(/img/news/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: space-evenly;
     padding-bottom: 100px;
     box-shadow:         0px -1px 3px 0px rgba(50, 50, 50, 0.33);
@@ -10080,6 +10083,25 @@ table{
 
 .link-area:active{
 
+}
+
+.card_block{
+    display: flex;
+}
+
+.card_icon{
+    height: 30px;
+    margin-left: 50px;
+}
+
+.count{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #f1cf60;
+    z-index: 10;
+    margin-left: 73px;
+    position: absolute;
 }
 
 .link-area:hover{
@@ -10167,6 +10189,8 @@ table{
 
 .left-menu-links{
     color: #575757; 
+    display: block;
+    padding: 15px;
 }
 
 .left-menu-links:hover{
@@ -10215,7 +10239,12 @@ table{
 }
 
 .prod-container{
-    display: flex;
+    display: inline-flex;
+}
+
+.filter_go{
+    text-decoration: none;
+    color:rgba(50, 50, 50, 0.33);
 }
 
 .product{
@@ -10256,7 +10285,8 @@ table{
 }
 
 .add-to-card{
-    width: 41%;
+    width: 100%;
+    height: 100%;
     border: none;
     background-color: #ffdc6a;
 }
@@ -10319,12 +10349,13 @@ table{
 }
 
 .footer-text{
-    color: #b0b0b0;
+    color: #ffffff;
 }
 
 .partners{
     width: 100px;
     margin: 10px;
+    filter: brightness(200%);
 }
 
 #footer-logo{
@@ -10341,20 +10372,72 @@ table{
 .news{
     width: 100%;
     background-color: #686868;
-    display: flex;
-    height: 500px;
+    height: 100%;
     margin-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .news-title{
-    color: rgb(255, 180, 81);
+    color: rgb(255, 230, 53);
     text-align: center;
     margin-inline: auto;
     margin-top: 19px;
 }
 
-.new-img{
-    
+.news-block{
+    width: 30%;
+    background-color: #787878;
+}
+
+.news-image{
+    width: 100%;
+}
+
+.news-p{
+    color: aliceblue;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.news-content{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* Card */
+
+.card-content{
+    width: 70%;
+}
+
+.confirm-offer{
+    border: none;
+    width: 100%;
+    height: 60px;
+    background-color: #ffdb67;
+}
+
+.offer-link{
+    padding-left: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 80px;
+}
+
+.shopping-panel{
+    background-color: #ffecd5;
+    width: 30%;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 3px;
+}
+
+.count-text{
+    color: #383838;
+    font-size: 15px;
+    padding: 4px;
+    padding-top: 2px;
 }
 
 /* Backgrounds */

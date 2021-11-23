@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class Pedals
+class Pedals extends Model
 {
     use HasFactory, Notifiable;
 
@@ -21,6 +22,7 @@ class Pedals
         'price',
         'description',
         'is_existing',
+        'is_double',
         'image'
     ];
 }

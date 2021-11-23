@@ -16,7 +16,7 @@
 
                     {{ __('Проверьте Вашу почту') }}
                     {{ __('Если Вы не получили письмо') }},
-                    <form class="d-inline" method="POST" action="{{ route('auth.resend') }}">
+                    <form class="d-inline" method="POST" action="{{ route('auth.verify') }}">
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('Запросить заново') }}</button>.
                     </form>

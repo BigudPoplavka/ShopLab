@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class Cymbal extends Model
+class Thing extends Model
 {
     use HasFactory, Notifiable;
 
@@ -16,13 +16,11 @@ class Cymbal extends Model
      * @var string[]
      */
     protected $fillable = [
-        'code',
         'title',
         'firm',
-        'size',
         'price',
+        'category',
         'description',
-        'is_existing',
         'image'
     ];
 }

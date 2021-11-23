@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Cymbal;
+use Illuminate\Http\Request;
+use App\Models;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +24,18 @@ Route::get('/', function () {
 Route::view("/guarantee", "guarantee")->name("guarantee");
 Route::view("/contacts", "contacts")->name("contacts");
 Route::view("/delivery", "delivery")->name("delivery");
-//Route::view("/products", "products")->name("products");
+Route::view("/index", "index")->name("index");
 
-Route::get('/products', [App\Http\Controllers\CategoriesController::class, 'SetDefault'])->name('products');
+Route::get("/products", function () {
+    $res = Cymbal::all()->toArray();
+    return view('products', ['arr'=>array_chunk($res, 4)]);
+  })->name("products");
+
+Route::get("/card", [\App\Http\Controllers\CardController::class, 'Show'])->name("card");
+
+Route::get('category/{category}', [App\Http\Controllers\CategoriesController::class, 'SetCategory'])->name('category');
+
+Route::post('products/{name}/{category}/{price}', [\App\Http\Controllers\CategoriesController::class, 'AddToCard'])->name("addToCard");
 
 Auth::routes();
 
@@ -71,9 +83,5 @@ Route::group([
         ->where('id', '[0-9]+')
         ->name('verify');
 });
-
-Route::get('category/{category}', [App\Http\Controllers\CategoriesController::class, 'SetCategory'])
-    ->where('category')
-    ->name('category');
 
 
